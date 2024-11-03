@@ -5,25 +5,17 @@
                 EnablePaging="true" PageSize="10" QuickFilter="@QuickFilter" 
                 RowsPerPageOptions="new int[] { 10, 20, 50, 100 }">
     <Columns>
-        <PropertyColumn Property="c => c.Id" Title="ID" Editable="false" />
         <PropertyColumn Property="c => c.Titre" Title="Titre" Filterable="true" />
         <PropertyColumn Property="c => c.Resume" Title="Résumé" Filterable="true" />
-        <PropertyColumn Property="c => c.NombreDePlacesDisponibles" Title="Places Disponibles" Filterable="true" />
-        <TemplateColumn Title="Temps Avant Expiration" Filterable="true">
-            <CellTemplate>
-                @context.Item.TempsAvantExpiration minutes
-            </CellTemplate>
-        </TemplateColumn>
-        @* <TemplateColumn CellClass="d-flex justify-end">
+
+        <TemplateColumn CellClass="d-flex justify-end" Title="S'abonner">
             <CellTemplate>
                 <div class="d-flex align-items-center">
-                    <MudIconButton Icon="@Icons.Material.Outlined.Edit" Color="Color.Primary" 
-                                    OnClick="() => OuvrirFenetreEditionCours(context.Item)" />
-                    <MudIconButton Icon="@Icons.Material.Outlined.Delete" Color="Color.Secondary" 
-                                    OnClick="() => SupprimerCours(context.Item)" />
+                    <MudIconButton Icon="@Icons.Material.Outlined.Alarm" Color="Color.Success" 
+                                    OnClick="() => AbonnerEtudiant(context.Item)"/>
                 </div>
             </CellTemplate>
-        </TemplateColumn> *@
+        </TemplateColumn>
     </Columns>
     <PagerContent>
         <MudDataGridPager T="Cours" PageSizeOptions="new int[] { 5, 10, 20, 50, 100 }" />

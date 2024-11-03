@@ -1,0 +1,21 @@
+.contenu[b-oc1k9a4gju] {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cours[b-oc1k9a4gju] {
+
+    display:  flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.coursNonAbonnes[b-oc1k9a4gju], .coursAbonnes[b-oc1k9a4gju] {
+
+    width: 45%;
+}

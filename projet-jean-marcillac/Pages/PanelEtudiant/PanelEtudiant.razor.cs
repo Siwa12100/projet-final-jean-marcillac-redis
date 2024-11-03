@@ -82,5 +82,53 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
                 this.CoursNonAbonnes.Remove(cours);
             });
         }
+
+        protected async void OnAbonnementEtudiant(int idCours)
+        {
+            if (this.MembreConnecte == null || this.MembreService == null)
+            {
+                return;
+            }
+
+            if (this.CoursAbonnes == null || this.CoursNonAbonnes == null)
+            {
+                return;
+            }
+
+            var cours = this.CoursNonAbonnes.Find(cours => cours.Id == idCours);
+            if (cours != null)
+            {
+                this.CoursAbonnes.Add(cours);
+                this.CoursNonAbonnes.Remove(cours);
+                this.MembreConnecte.IdsCoursInscrits.Add(idCours);
+            }
+
+            this.MembreConnecte.IdsCoursInscrits.Add(idCours);
+            await this.MembreService.ModifierEleve(this.MembreConnecte.Id, this.MembreConnecte);
+            this.MembreConnecte = await this.MembreService.RecupererEleve(this.MembreConnecte.Id);
+            this.FilterCours();
+            StateHasChanged();
+        }
+
+        protected async Task DesabonnerEtudiant(Cours cours)
+        {
+            if (this.MembreConnecte == null || this.MembreService == null)
+            {
+                return;
+            }
+
+            if (this.CoursAbonnes == null || this.CoursNonAbonnes == null)
+            {
+                return;
+            }
+
+            this.CoursAbonnes.Remove(cours);
+            this.CoursNonAbonnes.Add(cours);
+            this.MembreConnecte.IdsCoursInscrits.Remove(cours.Id);
+            await this.MembreService.ModifierEleve(this.MembreConnecte.Id, this.MembreConnecte);
+            this.MembreConnecte = await this.MembreService.RecupererEleve(this.MembreConnecte.Id);
+            this.FilterCours();
+            StateHasChanged();
+        }
     }
 }

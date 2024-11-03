@@ -8,6 +8,9 @@ namespace projet_jean_marcillac.Composants.Etudiants.TableauCoursEtudiant
         [Parameter]
         public List<Modeles.Cours>? Cours { get; set; }
 
+        [Parameter]
+        public EventCallback<int> OnAbonnementEtudiant { get; set; }
+
         private string searchString = "";
 
         private bool QuickFilter(Modeles.Cours cours)
@@ -19,6 +22,12 @@ namespace projet_jean_marcillac.Composants.Etudiants.TableauCoursEtudiant
             if (cours.Resume.Contains(searchString, StringComparison.OrdinalIgnoreCase))
                 return true;
             return false;
+        }
+
+        protected void AbonnerEtudiant(Modeles.Cours cours)
+        {
+            OnAbonnementEtudiant.InvokeAsync(cours.Id);
+            StateHasChanged();
         }
     }
 }

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/obj/Debug/net7.0/scopedcss/projectbundle/projet-jean-marcillac.bundle.scp.css",
+      "PackagePath": "staticwebassets/projet-jean-marcillac.bundle.scp.css"
+    },
+    {
+      "Id": "/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.projet-jean-marcillac.props",
+      "PackagePath": "build\\projet-jean-marcillac.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.projet-jean-marcillac.props",
+      "PackagePath": "buildMultiTargeting\\projet-jean-marcillac.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.projet-jean-marcillac.props",
+      "PackagePath": "buildTransitive\\projet-jean-marcillac.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.projet-jean-marcillac.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

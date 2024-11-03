@@ -18,12 +18,36 @@
     {
         <h1>Panel Etudiant : @this.MembreConnecte.Nom @this.MembreConnecte.Prenom</h1>
 
-        <div class="coursNonAbonnes">
-            <TableauCoursEtudiant Cours="@this.CoursNonAbonnes" />
-        </div>
+        <div class="cours">
+            <div class="coursAbonnes">
+                
+                @if (this.CoursAbonnes != null)
+                {
+                    @foreach (var cours in this.CoursAbonnes)
+                    {
+                        <div class="coursAbonne">
+                            <h2>@cours.Titre</h2>
+                            <p>@cours.Resume</p>
+                            <p>@cours.NombreDePlacesDisponibles places disponibles</p>
+                            <p>@cours.TempsAvantExpiration minutes avant expiration</p>
+                            <MudButton StartIcon="@Icons.Material.Outlined.Alarm"
+                                       Color="Color.Success" Variant="Variant.Filled"
+                                       Class="text-white" OnClick="() => DesabonnerEtudiant(cours)">
+                                Se désabonner
+                            </MudButton>
+                        </div>
+                    }
+                }
+                
 
-        <div class="coursAbonnes">
+            </div>
+            
+            <div class="coursNonAbonnes">
+                <TableauCoursEtudiant Cours="@this.CoursNonAbonnes"
+                                      OnAbonnementEtudiant="OnAbonnementEtudiant" />
+            </div>
 
+            
         </div>
     }
 </div>

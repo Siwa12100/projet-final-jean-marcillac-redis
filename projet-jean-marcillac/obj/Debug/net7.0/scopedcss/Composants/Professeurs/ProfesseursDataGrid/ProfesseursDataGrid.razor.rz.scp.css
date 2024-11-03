@@ -1,0 +1,22 @@
+.contenu[b-2w3l73kyjj] {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    width: 100%;
+}
+
+.tableau[b-2w3l73kyjj], .barre-recherche[b-2w3l73kyjj] {
+
+    width: 100%;
+    margin-bottom: 2vw;
+}
+
+.tableau[b-2w3l73kyjj] {
+
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
