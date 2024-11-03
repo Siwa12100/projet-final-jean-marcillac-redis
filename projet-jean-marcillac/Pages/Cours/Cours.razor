@@ -1,0 +1,25 @@
+@page "/cours/{id:int}"
+
+@using projet_jean_marcillac.Composants.NavBar
+@using projet_jean_marcillac.Composants.Footer
+
+<NavBar/>
+
+<div class="contenu">
+    @if (this.CoursCourant != null && this.Professeur != null)
+    {
+        <h1>Titre : @CoursCourant.Titre</h1>
+        <div class="details">
+            <p><strong>Résumé du cours : </strong>@CoursCourant.Resume</p>
+            <p><strong>Enseignant : </strong>@Professeur.Prenom @Professeur.Nom</p>
+        </div>
+
+        <p class="contenuCours">@CoursCourant.Contenu</p>
+    }
+    else
+    {
+        <h2>Cours introuvable...</h2>
+    }
+</div>
+
+<Footer/>

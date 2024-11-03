@@ -122,6 +122,31 @@ nav[b-bm6uieix6k] {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* _content/projet-jean-marcillac/Pages/Cours/Cours.razor.rz.scp.css */
+.contenu[b-gt7pd18di2] {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    width: 100%;
+}
+
+.details[b-gt7pd18di2] {
+
+    display:  flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-between;
+    width: 100%;
+}
+
+.details p[b-gt7pd18di2] {
+
+    width: 35%;
+    text-align: center;
+}
 /* _content/projet-jean-marcillac/Pages/PanelAdmin/PanelAdmin.razor.rz.scp.css */
 .contenu[b-1hjklefgfg] {
 

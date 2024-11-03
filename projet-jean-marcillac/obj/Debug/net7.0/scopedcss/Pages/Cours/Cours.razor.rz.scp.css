@@ -1,0 +1,24 @@
+.contenu[b-gt7pd18di2] {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    width: 100%;
+}
+
+.details[b-gt7pd18di2] {
+
+    display:  flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-between;
+    width: 100%;
+}
+
+.details p[b-gt7pd18di2] {
+
+    width: 35%;
+    text-align: center;
+}

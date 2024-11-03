@@ -16,8 +16,8 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
         [Inject]
         protected ICoursService? CoursService { get; set; }
 
-        protected List<Cours>? CoursAbonnes { get; set; }
-        protected List<Cours>? CoursNonAbonnes { get; set; }
+        protected List<Modeles.Cours>? CoursAbonnes { get; set; }
+        protected List<Modeles.Cours>? CoursNonAbonnes { get; set; }
         protected Eleve? MembreConnecte { get; set; }
         protected List<Membre>? TousLesEtudiants { get; set; }
 
@@ -37,7 +37,7 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             var tousLesEtudiants = await this.MembreService.RecupererTousLesEleves();
             tousLesEtudiants.ToList().ForEach(etudiant => this.TousLesEtudiants.Add(etudiant));
 
-            this.CoursAbonnes = new List<Cours>();
+            this.CoursAbonnes = new List<Modeles.Cours>();
             var tousLesCours = await this.CoursService.RecupererTousLesCours();
             this.CoursNonAbonnes = tousLesCours.ToList();   
 
@@ -64,7 +64,7 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
                 return;
             }
 
-            var coursADeplacer = new List<Cours>();
+            var coursADeplacer = new List<Modeles.Cours>();
             this.MembreConnecte.IdsCoursInscrits.ForEach(idCours => {
 
                 if (this.CoursNonAbonnes.Find(cours => cours.Id == idCours) != null)
@@ -110,7 +110,7 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             StateHasChanged();
         }
 
-        protected async Task DesabonnerEtudiant(Cours cours)
+        protected async Task DesabonnerEtudiant(Modeles.Cours cours)
         {
             if (this.MembreConnecte == null || this.MembreService == null)
             {

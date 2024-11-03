@@ -73,6 +73,10 @@ build_metadata.AdditionalFiles.CssScope = b-bm6uieix6k
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9Qcm9mZXNzZXVycy9Qcm9mZXNzZXVyc0RhdGFHcmlkL1Byb2Zlc3NldXJzRGF0YUdyaWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-2w3l73kyjj
 
+[/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Pages/Cours/Cours.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291cnMvQ291cnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-gt7pd18di2
+
 [/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Pages/PanelAdmin/PanelAdmin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUGFuZWxBZG1pbi9QYW5lbEFkbWluLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-1hjklefgfg

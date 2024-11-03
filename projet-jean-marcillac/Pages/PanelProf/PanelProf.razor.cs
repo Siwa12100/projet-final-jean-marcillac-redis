@@ -72,7 +72,7 @@ namespace projet_jean_marcillac.Pages.PanelProf
         {
             if (this.MembreConnecte == null) return;
             
-            var CoursASupprimer = new List<Cours>();
+            var CoursASupprimer = new List<Modeles.Cours>();
             if (this.Cours  != null)
             {
                 this.Cours.ForEach(cours => {
