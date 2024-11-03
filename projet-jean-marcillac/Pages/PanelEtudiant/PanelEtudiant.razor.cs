@@ -23,7 +23,7 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
         protected List<Modeles.Cours>? CoursNonAbonnes { get; set; }
         protected Eleve? MembreConnecte { get; set; }
         protected List<Membre>? TousLesEtudiants { get; set; }
-        protected List<string>? Notifs { get; set; }
+        protected List<Notification>? Notifs { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -48,26 +48,47 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
 
             this.CoursAbonnes = new List<Modeles.Cours>();
             var tousLesCours = await this.CoursService.RecupererTousLesCours();
-            this.CoursNonAbonnes = tousLesCours.ToList();   
+            this.CoursNonAbonnes = tousLesCours.ToList();  
 
-            this.Notifs = new List<string>();
+            // await this.OnConnexion(new Eleve(1, "Jean", "Marcillac")); 
+
+            this.Notifs = new List<Notification>();
 
             await this.RedisService.Suscriber.SubscribeAsync("cours-projet-final", async (channel, message) =>
             {
                 if (message.ToString().Contains("ajout"))
                 {
                     var idCours = int.Parse(message.ToString().Split(",")[1]);
-                    this.Notifs.Add($"Un nouveau cours a été ajouté: {idCours}");
+                    var Cours = await this.CoursService.RecupererCours(idCours);
+                        var Prof = await this.MembreService.RecupererProfesseur(Cours.IdProfesseur);
+                        var InfosProf  = Prof.Prenom + " " + Prof.Nom;
+                        this.Notifs.Add(new Notification(Cours.Titre, "ajouté à la plateforme",InfosProf));
                     await InvokeAsync(StateHasChanged);
                 }
 
                 if (message.ToString().Contains("modif"))
                 {
                     var idCours = int.Parse(message.ToString().Split(",")[1]);
-                    this.Notifs.Add($"Un cours a été modifié: {idCours}");
+                    bool coursAbonne = false;
+                    this.CoursAbonnes.ForEach(cours => {
+                        if (cours.Id == idCours)
+                        {
+                            coursAbonne = true;
+                        }
+                    });
+
+                    if (coursAbonne)
+                    {
+                        var Cours = await this.CoursService.RecupererCours(idCours);
+                        var Prof = await this.MembreService.RecupererProfesseur(Cours.IdProfesseur);
+                        var InfosProf  = Prof.Prenom + " " + Prof.Nom;
+                        this.Notifs.Add(new Notification(Cours.Titre, "modifié", InfosProf));
+                    }
                     await InvokeAsync(StateHasChanged);
                 }
             });
+
+
         }
 
 

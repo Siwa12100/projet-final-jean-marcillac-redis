@@ -64,3 +64,28 @@ h2 {
     align-items: center;
     height: 86%;
 }
+
+.notif {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(157, 226, 253);
+
+    margin-bottom: 1.3vw;
+    border-radius: 14px;
+    padding: 1vw;
+}
+
+.notif p {
+
+    font-size: 1.4vw;
+}
+
+.notifications h2 {
+
+    margin-top: 4vw;
+    text-align: center;
+}
