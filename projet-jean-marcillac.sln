@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projet-jean-marcillac", "projet-jean-marcillac", "{48BAAE26-1B54-4A7E-B5A2-743DBD5DCDAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projet-jean-marcillac", "projet-jean-marcillac\projet-jean-marcillac.csproj", "{81A92CA1-46F1-43E8-9222-D2E1A5AE09FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81A92CA1-46F1-43E8-9222-D2E1A5AE09FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81A92CA1-46F1-43E8-9222-D2E1A5AE09FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81A92CA1-46F1-43E8-9222-D2E1A5AE09FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81A92CA1-46F1-43E8-9222-D2E1A5AE09FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81A92CA1-46F1-43E8-9222-D2E1A5AE09FA} = {48BAAE26-1B54-4A7E-B5A2-743DBD5DCDAF}
+	EndGlobalSection
+EndGlobal

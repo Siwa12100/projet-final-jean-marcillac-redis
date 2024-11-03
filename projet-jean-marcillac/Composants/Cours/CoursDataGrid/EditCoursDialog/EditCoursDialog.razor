@@ -1,0 +1,36 @@
+@using MudBlazor
+@using projet_jean_marcillac.Modeles
+
+<MudDialog>
+    <DialogContent>
+        <MudText Typo="Typo.h6">Modifier le Cours</MudText>
+        <MudTextField Label="Titre" @bind-Value="Cours.Titre" Variant="Variant.Outlined" Margin="Margin.Normal" 
+                      Error="@TitreError" ErrorText="Le titre est requis." @onblur="ValiderTitre" Immediate="true" />
+        <MudTextField Label="Résumé" @bind-Value="Cours.Resume" Variant="Variant.Outlined" Margin="Margin.Normal" 
+                      Error="@ResumeError" ErrorText="Le résumé est requis." @onblur="ValiderResume" Immediate="true" />
+        <MudTextField Label="Contenu" @bind-Value="Cours.Contenu" Variant="Variant.Outlined" Margin="Margin.Normal" Lines="5" 
+                      Error="@ContenuError" ErrorText="Le contenu est requis." @onblur="ValiderContenu" Immediate="true" />
+        <MudNumericField Label="Nombre de Places Disponibles" @bind-Value="Cours.NombreDePlacesDisponibles" Variant="Variant.Outlined" Margin="Margin.Normal" 
+                         Error="@PlacesError" ErrorText="Le nombre de places doit être supérieur à 0." @onblur="ValiderPlaces" Immediate="true" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Annuler" Color="Color.Secondary">Annuler</MudButton>
+        <MudButton OnClick="Sauvegarder" Color="Color.Primary" Disabled="false">Sauvegarder</MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+@* <MudDialog>
+    <DialogContent>
+    <MudText Typo="Typo.h6">Modifier le Cours</MudText>
+    <MudTextField Label="Titre" @bind-Value="Cours.Titre" Variant="Variant.Outlined" Margin="Margin.Normal" />
+    <MudTextField Label="Résumé" @bind-Value="Cours.Resume" Variant="Variant.Outlined" Margin="Margin.Normal" />
+    <MudTextField Label="Contenu" @bind-Value="Cours.Contenu" Variant="Variant.Outlined" Margin="Margin.Normal" Lines="5" />
+    <MudNumericField Label="Nombre de Places Disponibles" @bind-Value="Cours.NombreDePlacesDisponibles" Variant="Variant.Outlined" Margin="Margin.Normal" />
+</DialogContent>
+
+<DialogActions>
+    <MudButton OnClick="SaveChanges" Color="Color.Primary" Variant="Variant.Filled">Sauvegarder</MudButton>
+    <MudButton OnClick="Cancel" Color="Color.Secondary" Variant="Variant.Outlined">Annuler</MudButton>
+</DialogActions>
+</MudDialog> *@

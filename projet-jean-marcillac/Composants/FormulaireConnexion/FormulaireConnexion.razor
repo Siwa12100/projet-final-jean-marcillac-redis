@@ -1,0 +1,15 @@
+@using MudBlazor
+@using projet_jean_marcillac.Modeles
+
+<div class="contenu">
+    <MudPaper Elevation="4" Class="pa-4 mx-auto mt-6" MaxWidth="400px">
+    <MudText Typo="Typo.h5" Align="Align.Center">@Titre</MudText>
+    <MudForm>
+        <MudTextField Label="Nom" @bind-Value="nomFormulaire" Required="true" Immediate="true" />
+        <MudTextField Label="Prénom" @bind-Value="prenomFormulaire" Required="true" Immediate="true" />
+        <MudButton OnClick="Connexion" Variant="Variant.Outlined" Color="Color.Primary" Class="mt-4" FullWidth="true" StartIcon="@Icons.Material.Outlined.Login">
+            Connexion
+        </MudButton>
+    </MudForm>
+</MudPaper>
+</div>

@@ -1,0 +1,31 @@
+@page "/paneletudiant"
+@using projet_jean_marcillac.Composants.FormulaireConnexion
+@using projet_jean_marcillac.Composants.Footer
+@using projet_jean_marcillac.Composants.NavBar
+@using projet_jean_marcillac.Composants.Etudiants.TableauCoursEtudiant
+
+<NavBar/>
+
+<div class="contenu">
+    @if (this.MembreConnecte == null)
+    {
+        <h1>Panel Etudiant</h1>
+        <FormulaireConnexion OnConnexion="OnConnexion"
+                            Membres="@TousLesEtudiants"
+                            Titre="Connexion - Professeur"/>
+    }
+    else
+    {
+        <h1>Panel Etudiant : @this.MembreConnecte.Nom @this.MembreConnecte.Prenom</h1>
+
+        <div class="coursNonAbonnes">
+            <TableauCoursEtudiant Cours="@this.CoursNonAbonnes" />
+        </div>
+
+        <div class="coursAbonnes">
+
+        </div>
+    }
+</div>
+
+<Footer/>

@@ -1,0 +1,39 @@
+@page "/"
+@using projet_jean_marcillac.Composants.NavBar
+@using projet_jean_marcillac.Composants.Footer
+@using projet_jean_marcillac.Composants.Professeurs.ProfesseursDataGrid
+@using projet_jean_marcillac.Composants.Etudiants.EtudiantsDataGrid
+@using MudBlazor
+
+<NavBar/>
+
+<div class="contenu">
+
+    <h1>Panel d'administration de la plateforme de cours</h1>
+
+    <div class="tableaux">
+        <div class="tableauProfs">
+            <h2>Professeurs</h2>
+            <ProfesseursDataGrid Professeurs="@Professeurs" 
+                                OnProfesseurModifie="() => ProfesseurSelectionChanged()"/>
+        </div>
+
+        <div class="tableauEleves">
+            <h2>Etudiants</h2>
+            <EtudiantsDataGrid Etudiants="@Eleves" 
+                                OnEtudiantModifie="() => EleveSelectionChanged()"/>
+        </div>
+    </div>
+
+    <div class="boutons-data mt-4">
+        <MudButton OnClick="ChargerStub" Color="Color.Success" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Add">
+            Charger le stub
+        </MudButton>
+        <MudButton OnClick="SupprimerToutesLesDonnees" Color="Color.Error" Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Delete">
+            Supprimer toutes les données
+        </MudButton>
+    </div>
+
+</div>
+
+<Footer/>

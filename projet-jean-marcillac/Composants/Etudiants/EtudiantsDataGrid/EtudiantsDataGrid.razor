@@ -1,0 +1,35 @@
+@using projet_jean_marcillac.Modeles
+@using MudBlazor
+
+<div class="contenu">
+    <div class="barre-recherche">
+        <MudTextField @bind-Value="searchString" Placeholder="Rechercher un étudiant..." Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Search" Class="mb-4" FullWidth="true" />
+    </div>
+    <div class="tableau">
+        <MudDataGrid T="Eleve" Items="@Etudiants" Bordered="true" Dense="true"
+                EnablePaging="true" PageSize="10" QuickFilter="@QuickFilter" 
+                RowsPerPageOptions="new int[] { 10, 20, 50, 100 }">
+            <Columns>
+                <PropertyColumn Property="e => e.Id" Title="ID" Editable="false" />
+                <PropertyColumn Property="e => e.Nom" Title="Nom" Filterable="true" />
+                <PropertyColumn Property="e => e.Prenom" Title="Prénom" Filterable="true" />
+                <TemplateColumn CellClass="d-flex justify-end">
+                    <CellTemplate>
+                        <div class="d-flex align-items-center">
+                            <MudIconButton Icon="@Icons.Material.Outlined.Edit" Color="Color.Primary" 
+                                           OnClick="() => OuvrirFenetreEditionEtudiant(context.Item)" />
+                            <MudIconButton Icon="@Icons.Material.Outlined.Delete" Color="Color.Secondary" 
+                                           OnClick="() => SupprimerEtudiant(context.Item)" />
+                        </div>
+                    </CellTemplate>
+                </TemplateColumn>
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="Eleve" PageSizeOptions="new int[] { 5, 10, 20, 50, 100 }" />
+            </PagerContent>
+        </MudDataGrid>
+    </div>
+    <div class="bouton-ajouter">
+        <MudButton OnClick="AjouterEtudiant" Color="Color.Primary" EndIcon="@Icons.Material.Outlined.Add"  Variant="Variant.Filled" Class="mt-4">Ajouter étudiant</MudButton>
+    </div>
+</div>

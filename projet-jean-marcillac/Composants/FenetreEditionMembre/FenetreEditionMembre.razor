@@ -1,0 +1,15 @@
+@using MudBlazor
+@using projet_jean_marcillac.Modeles
+
+<MudDialog>
+    <DialogContent>
+        <MudTextField @bind-Value="Membre.Nom" Label="Nom" Required="true" Immediate="true" 
+                      Error="@NomError" ErrorText="Le nom est requis." @onblur="ValiderNom" />
+        <MudTextField @bind-Value="Membre.Prenom" Label="Prénom" Required="true" Immediate="true" 
+                      Error="@PrenomError" ErrorText="Le prénom est requis." @onblur="ValiderPrenom" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Annuler" Color="Color.Secondary">Annuler</MudButton>
+        <MudButton OnClick="Sauvegarder" Color="Color.Primary">Sauvegarder</MudButton>
+    </DialogActions>
+</MudDialog>

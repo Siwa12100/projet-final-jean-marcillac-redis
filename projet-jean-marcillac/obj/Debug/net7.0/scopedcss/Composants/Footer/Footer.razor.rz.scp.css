@@ -1,0 +1,20 @@
+.footer[b-t47pkccyiw] {
+
+    background-color: black;
+    width: 100%;
+    height : 5vw;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 8vw;
+
+}
+
+.contenu[b-t47pkccyiw] {
+
+    border : 1px solid red;
+    height: 90%;
+    width: 90%;
+}
