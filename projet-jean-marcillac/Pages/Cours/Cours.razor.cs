@@ -31,14 +31,8 @@ namespace projet_jean_marcillac.Pages.Cours
                 throw new ArgumentNullException(nameof(MembreService));
             }
 
-            Console.WriteLine("Id du cours : " + Id);
-
             CoursCourant = await CoursService.RecupererCours(Id);
             this.Professeur = await MembreService.RecupererProfesseur(CoursCourant.IdProfesseur);
-
-            Console.WriteLine("Titre du cours : " + CoursCourant.Titre);
         }
-
-
     }
 }

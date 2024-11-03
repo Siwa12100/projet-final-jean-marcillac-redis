@@ -87,10 +87,7 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
                     await InvokeAsync(StateHasChanged);
                 }
             });
-
-
         }
-
 
         protected async Task OnConnexion(Membre membre)
         {

@@ -58,7 +58,6 @@ namespace projet_jean_marcillac.Services.MembreService
             return eleve;
         }
 
-        // Gestion des professeurs
         public async Task<Professeur> AjouterProfesseur(Professeur professeur)
         {
             await redisService.Database.HashSetAsync($"professeur:{professeur.Id}", professeur.ToHashEntries());

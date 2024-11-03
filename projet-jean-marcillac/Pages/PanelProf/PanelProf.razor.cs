@@ -65,7 +65,6 @@ namespace projet_jean_marcillac.Pages.PanelProf
         protected void OnConnexion(Membre membre)
         {
             MembreConnecte = membre;
-            Console.WriteLine("Membre connecté ----> " + MembreConnecte);
             this.FiltrerCoursParProfesseur();
         }
 

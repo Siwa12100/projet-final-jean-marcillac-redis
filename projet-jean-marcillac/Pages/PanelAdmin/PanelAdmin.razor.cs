@@ -57,8 +57,6 @@ namespace projet_jean_marcillac.Pages.PanelAdmin
 
         protected async Task ProfesseurSelectionChanged()
         {
-            Console.WriteLine("Event changement prof levé ! ");
-
             if (this.MembreService == null)
             {
                 throw new ArgumentNullException(nameof(MembreService));
@@ -75,8 +73,6 @@ namespace projet_jean_marcillac.Pages.PanelAdmin
 
         protected async Task EleveSelectionChanged()
         {
-            Console.WriteLine("Event changement eleve levé ! ");
-
             if (this.MembreService == null)
             {
                 throw new ArgumentNullException(nameof(MembreService));

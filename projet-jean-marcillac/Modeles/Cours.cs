@@ -36,13 +36,7 @@ namespace projet_jean_marcillac.Modeles
                 {
                     id = int.Parse(id.ToString() ?? "-1");
                 }
-
-                // var tempsAvantExpiration = hashEntries.FirstOrDefault(x => x.Name == "TempsAvantExpiration").Value;
-                // if (!tempsAvantExpiration.IsNullOrEmpty)
-                // {
-                //     tempsAvantExpiration = int.Parse(tempsAvantExpiration.ToString() ?? "-1");
-                // }
-                
+              
                 var titre = hashEntries.FirstOrDefault(x => x.Name == "Titre").Value;
                 var resume = hashEntries.FirstOrDefault(x => x.Name == "Resume").Value;
                 var contenu = hashEntries.FirstOrDefault(x => x.Name == "Contenu").Value;

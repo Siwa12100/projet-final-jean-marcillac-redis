@@ -28,14 +28,12 @@ namespace projet_jean_marcillac.Composants.FormulaireConnexion
 
         private async Task Connexion()
         {
-            // Vérification si les champs sont bien remplis
             if (string.IsNullOrWhiteSpace(nomFormulaire) || string.IsNullOrWhiteSpace(prenomFormulaire))
             {
                 Snackbar.Add("Veuillez remplir tous les champs.", Severity.Error);
                 return;
             }
 
-            // Vérification si un membre avec le même nom et prénom existe
             var membre = Membres?.FirstOrDefault(m => m.Nom == nomFormulaire && m.Prenom == prenomFormulaire);
 
             if (membre != null)

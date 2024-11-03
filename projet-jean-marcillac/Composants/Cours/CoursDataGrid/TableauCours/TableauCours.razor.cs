@@ -56,7 +56,6 @@ namespace projet_jean_marcillac.Composants.Cours.CoursDataGrid.TableauCours
 
             if (!resultat.Canceled && resultat.Data is CoursModele coursModifie)
             {
-                Console.WriteLine("Cours issu form dans tableau : " + coursModifie);
                 await CoursService.ModifierCours(coursModifie.Id, coursModifie);
                 await OnCoursModifie.InvokeAsync();
             }
@@ -86,7 +85,6 @@ namespace projet_jean_marcillac.Composants.Cours.CoursDataGrid.TableauCours
 
             if (!resultat.Canceled && resultat.Data is CoursModele coursAjoute)
             {
-                Console.WriteLine("Cours issu form : " + coursAjoute);
                 await CoursService.AjouterCours(coursAjoute);
                 await OnCoursModifie.InvokeAsync();
             }

@@ -20,7 +20,7 @@ namespace projet_jean_marcillac
         {
             Console.WriteLine("Début des tests approfondis du DataService");
 
-            // Création de quelques élèves et professeurs
+
             var eleve1 = new Eleve(1, "Dupont", "Jean");
             var eleve2 = new Eleve(2, "Martin", "Paul");
             var professeur1 = new Professeur(1, "Durand", "Marie");
@@ -31,14 +31,14 @@ namespace projet_jean_marcillac
             await dataService.AjouterProfesseur(professeur1);
             await dataService.AjouterProfesseur(professeur2);
 
-            // Création de quelques cours
+
             var cours1 = new Cours(1, "Cours de Mathématiques", "Cours sur les mathématiques", 10, "Contenu du cours sur les mathématiques", professeur1.Id, new List<int> { eleve1.Id, eleve2.Id });
             var cours2 = new Cours(2, "Cours de Physique", "Cours sur la physique", 10, "Contenu du cours sur la physique", professeur2.Id, new List<int> { eleve1.Id });
 
             await dataService.AjouterCours(cours1);
             await dataService.AjouterCours(cours2);
 
-            // Vérification de la cohérence des données après ajout
+
             var eleve1Updated = await dataService.RecupererEleve(eleve1.Id);
             var eleve2Updated = await dataService.RecupererEleve(eleve2.Id);
             var professeur1Updated = await dataService.RecupererProfesseur(professeur1.Id);
@@ -69,11 +69,11 @@ namespace projet_jean_marcillac
                 Console.WriteLine("Erreur: Professeur 2 ne donne pas les cours corrects après ajout.");
             }
 
-            // Modification d'un cours
+
             var updatedCours1 = new Cours(1, "Cours de Mathématiques Avancées", "Cours sur les mathématiques avancées", 15, "Contenu avancé", professeur2.Id, new List<int> { eleve2.Id });
             await dataService.ModifierCours(cours1.Id, updatedCours1);
 
-            // Vérification de la cohérence des données après modification
+
             eleve1Updated = await dataService.RecupererEleve(eleve1.Id);
             eleve2Updated = await dataService.RecupererEleve(eleve2.Id);
             professeur1Updated = await dataService.RecupererProfesseur(professeur1.Id);
@@ -104,10 +104,9 @@ namespace projet_jean_marcillac
                 Console.WriteLine("Erreur: Professeur 2 ne donne pas le cours après modification.");
             }
 
-            // Suppression d'un cours
+
             await dataService.SupprimerCours(cours1.Id);
 
-            // Vérification de la cohérence des données après suppression
             eleve1Updated = await dataService.RecupererEleve(eleve1.Id);
             eleve2Updated = await dataService.RecupererEleve(eleve2.Id);
             professeur1Updated = await dataService.RecupererProfesseur(professeur1.Id);
@@ -138,10 +137,10 @@ namespace projet_jean_marcillac
                 Console.WriteLine("Erreur: Professeur 2 donne encore le cours après suppression.");
             }
 
-            // Suppression d'un élève
+
             await dataService.SupprimerEleve(eleve1.Id);
 
-            // Vérification de la cohérence des données après suppression d'un élève
+
             var elevesRestants = await dataService.RecupererTousLesEleves();
             Console.WriteLine($"Élèves restants après suppression: {string.Join(", ", elevesRestants.Select(e => e.Id))}");
 
@@ -150,10 +149,9 @@ namespace projet_jean_marcillac
                 Console.WriteLine("Erreur: Élève 1 est encore présent après suppression.");
             }
 
-            // Suppression d'un professeur
+
             await dataService.SupprimerProfesseur(professeur1.Id);
 
-            // Vérification de la cohérence des données après suppression d'un professeur
             var professeursRestants = await dataService.RecupererTousLesProfesseurs();
             Console.WriteLine($"Professeurs restants après suppression: {string.Join(", ", professeursRestants.Select(p => p.Id))}");
 
@@ -162,7 +160,6 @@ namespace projet_jean_marcillac
                 Console.WriteLine("Erreur: Professeur 1 est encore présent après suppression.");
             }
 
-            // Suppression des données restantes
             await dataService.SupprimerCours(cours2.Id);
             await dataService.SupprimerEleve(eleve2.Id);
             await dataService.SupprimerProfesseur(professeur2.Id);
