@@ -33,6 +33,12 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* _content/projet-jean-marcillac/Composants/Etudiants/TableauCoursEtudiant/TableauCoursEtudiant.razor.rz.scp.css */
+.tableau[b-8mrzpn1h3n] {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 /* _content/projet-jean-marcillac/Composants/Footer/Footer.razor.rz.scp.css */
 .footer[b-t47pkccyiw] {
 
@@ -131,6 +137,12 @@ nav[b-bm6uieix6k] {
     justify-content: start;
 
     width: 100%;
+    margin-bottom: 18vw;
+}
+
+h1[b-gt7pd18di2] {
+    font-size: 3vw;
+    margin-bottom: 3vw;
 }
 
 .details[b-gt7pd18di2] {
@@ -140,12 +152,20 @@ nav[b-bm6uieix6k] {
     justify-content: center;
     align-items: space-between;
     width: 100%;
+    margin-bottom: 3vw;
 }
 
 .details p[b-gt7pd18di2] {
 
     width: 35%;
     text-align: center;
+    font-size: 1.3vw;
+}
+
+.contenuCours[b-gt7pd18di2] {
+
+    width: 80%;
+    font-size: 1.3vw;
 }
 /* _content/projet-jean-marcillac/Pages/PanelAdmin/PanelAdmin.razor.rz.scp.css */
 .contenu[b-1hjklefgfg] {
@@ -206,6 +226,11 @@ h1[b-1hjklefgfg] {
 .coursNonAbonnes[b-oc1k9a4gju], .coursAbonnes[b-oc1k9a4gju] {
 
     width: 45%;
+}
+
+h1[b-oc1k9a4gju] {
+    font-size: 3vw;
+    margin-bottom: 3vw;
 }
 /* _content/projet-jean-marcillac/Pages/PanelProf/PanelProf.razor.rz.scp.css */
 h1[b-4ezb0572rm] {

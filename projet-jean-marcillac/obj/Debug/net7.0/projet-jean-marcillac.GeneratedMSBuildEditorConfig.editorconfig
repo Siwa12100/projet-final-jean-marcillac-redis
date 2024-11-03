@@ -29,10 +29,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9Db3Vycy9Db3Vyc0RhdGFHcmlkL0VkaXRDb3Vyc0RpYWxvZy9FZGl0Q291cnNEaWFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Composants/Etudiants/TableauCoursEtudiant/TableauCoursEtudiant.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9FdHVkaWFudHMvVGFibGVhdUNvdXJzRXR1ZGlhbnQvVGFibGVhdUNvdXJzRXR1ZGlhbnQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Composants/FenetreEditionMembre/FenetreEditionMembre.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9GZW5ldHJlRWRpdGlvbk1lbWJyZS9GZW5ldHJlRWRpdGlvbk1lbWJyZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope = b-0dlgxtbfem
 [/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Composants/Etudiants/EtudiantsDataGrid/EtudiantsDataGrid.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9FdHVkaWFudHMvRXR1ZGlhbnRzRGF0YUdyaWQvRXR1ZGlhbnRzRGF0YUdyaWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ohg7g2tbkx
+
+[/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Composants/Etudiants/TableauCoursEtudiant/TableauCoursEtudiant.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9FdHVkaWFudHMvVGFibGVhdUNvdXJzRXR1ZGlhbnQvVGFibGVhdUNvdXJzRXR1ZGlhbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-8mrzpn1h3n
 
 [/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/Composants/Footer/Footer.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9zYW50cy9Gb290ZXIvRm9vdGVyLnJhem9y

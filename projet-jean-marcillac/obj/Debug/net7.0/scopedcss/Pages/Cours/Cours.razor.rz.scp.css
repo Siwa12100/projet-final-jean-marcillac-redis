@@ -6,6 +6,12 @@
     justify-content: start;
 
     width: 100%;
+    margin-bottom: 18vw;
+}
+
+h1[b-gt7pd18di2] {
+    font-size: 3vw;
+    margin-bottom: 3vw;
 }
 
 .details[b-gt7pd18di2] {
@@ -15,10 +21,18 @@
     justify-content: center;
     align-items: space-between;
     width: 100%;
+    margin-bottom: 3vw;
 }
 
 .details p[b-gt7pd18di2] {
 
     width: 35%;
     text-align: center;
+    font-size: 1.3vw;
+}
+
+.contenuCours[b-gt7pd18di2] {
+
+    width: 80%;
+    font-size: 1.3vw;
 }

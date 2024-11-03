@@ -55,3 +55,4 @@
 /home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/obj/Debug/net7.0/projet-jean-marcillac.genruntimeconfig.cache
 /home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/obj/Debug/net7.0/ref/projet-jean-marcillac.dll
 /home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/obj/Debug/net7.0/scopedcss/Pages/Cours/Cours.razor.rz.scp.css
+/home/siwa/dev/projet-final-jean-marcillac-redis/projet-jean-marcillac/obj/Debug/net7.0/scopedcss/Composants/Etudiants/TableauCoursEtudiant/TableauCoursEtudiant.razor.rz.scp.css
