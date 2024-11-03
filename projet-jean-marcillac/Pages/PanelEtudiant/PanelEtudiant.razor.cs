@@ -134,6 +134,18 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
                 this.CoursNonAbonnes.Remove(cours);
             });
 
+            coursADeplacer = new List<Modeles.Cours>();
+            this.CoursNonAbonnes.ForEach(cours => {
+                if (cours.NombreDePlacesDisponibles <= 0)
+                {
+                    coursADeplacer.Add(cours);
+                }
+            });
+
+            coursADeplacer.ForEach(cours => {
+                this.CoursNonAbonnes.Remove(cours);
+            });
+
             this.CoursAbonnes = this.CoursAbonnes.Distinct().ToList();
             this.CoursNonAbonnes = this.CoursNonAbonnes.Distinct().ToList();
 

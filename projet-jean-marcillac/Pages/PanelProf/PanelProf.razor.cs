@@ -55,6 +55,7 @@ namespace projet_jean_marcillac.Pages.PanelProf
             {
                 throw new InvalidOperationException("CoursService est null");
             }
+
             var reponse = await this.CoursService.RecupererTousLesCours();
             this.Cours = reponse.ToList();
             this.FiltrerCoursParProfesseur();

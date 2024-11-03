@@ -16,6 +16,9 @@ namespace projet_jean_marcillac.Composants.Cours.CoursDataGrid.EditCoursDialog
         [Inject]
         protected ICoursService? CoursService { get; set; }
 
+        [Inject]
+        protected RedisService? RedisService { get; set; }
+
         [Parameter]
         public Modeles.Cours Cours { get; set; } = new Modeles.Cours();
 
@@ -58,7 +61,7 @@ namespace projet_jean_marcillac.Composants.Cours.CoursDataGrid.EditCoursDialog
             MudDialog?.Cancel();
         }
 
-        protected void Sauvegarder()
+        protected async Task Sauvegarder()
         {
             ValiderTitre();
             ValiderResume();
@@ -76,6 +79,13 @@ namespace projet_jean_marcillac.Composants.Cours.CoursDataGrid.EditCoursDialog
                 {
                     this.Cours.IdProfesseur = this.IdProfesseur;
                 }
+
+                if (this.RedisService == null)
+                {
+                    throw new InvalidOperationException("RedisService est null");
+                }
+
+                await this.RedisService.Suscriber.PublishAsync("cours-projet-final", "modif, " + Cours.Id);
 
                 this.Cours.IdsElevesInscrits = new List<int>();
                 MudDialog?.Close(DialogResult.Ok(Cours));

@@ -61,7 +61,6 @@ namespace projet_jean_marcillac.Services.CoursService
             Console.WriteLine("Modification du cours dans le service ---> " + updatedCours);
             await redisService.Database.HashSetAsync($"cours:{id}", updatedCours.ToHashEntries());
             await redisService.Database.KeyExpireAsync($"cours:{id}", TimeSpan.FromMinutes(Cours.DateExpirationCours));
-            await this.redisService.Suscriber.PublishAsync("cours-projet-final", "modif, " + id);
             return updatedCours;
         }
 
