@@ -12,7 +12,7 @@
         <h1>Panel Etudiant</h1>
         <FormulaireConnexion OnConnexion="OnConnexion"
                             Membres="@TousLesEtudiants"
-                            Titre="Connexion - Professeur"/>
+                            Titre="Connexion - Etudiant"/>
     }
     else
     {
@@ -20,21 +20,30 @@
 
         <div class="cours">
             <div class="coursAbonnes">
-                
+                <h2>Cours auquels vous êtes abonnés : </h2>
                 @if (this.CoursAbonnes != null)
                 {
                     @foreach (var cours in this.CoursAbonnes)
                     {
                         <div class="coursAbonne">
-                            <h2>@cours.Titre</h2>
-                            <p>@cours.Resume</p>
-                            <p>@cours.NombreDePlacesDisponibles places disponibles</p>
-                            <p>@cours.TempsAvantExpiration minutes avant expiration</p>
-                            <MudButton StartIcon="@Icons.Material.Outlined.Alarm"
-                                       Color="Color.Success" Variant="Variant.Filled"
+                            <div class="infos">
+                                <h3>@cours.Titre</h3>
+                                <p>@cours.Resume</p>
+                            </div>
+                            <div class="boutons">
+                                <MudButton StartIcon="@Icons.Material.Outlined.Close"
+                                       Color="Color.Error" Variant="Variant.Filled"
                                        Class="text-white" OnClick="() => DesabonnerEtudiant(cours)">
                                 Se désabonner
                             </MudButton>
+                            <MudButton StartIcon="@Icons.Material.Outlined.Visibility"
+                                       Color="Color.Primary" Variant="Variant.Filled"
+                                       Class="text-white" OnClick="() => DirigerVersCours(cours)">
+                                Consulter
+                            </MudButton>
+                            </div>
+                            
+                            
                         </div>
                     }
                 }
@@ -43,6 +52,7 @@
             </div>
             
             <div class="coursNonAbonnes">
+                <h2>S'abonner à d'autres cours :</h2>
                 <TableauCoursEtudiant Cours="@this.CoursNonAbonnes"
                                       OnAbonnementEtudiant="OnAbonnementEtudiant" />
             </div>

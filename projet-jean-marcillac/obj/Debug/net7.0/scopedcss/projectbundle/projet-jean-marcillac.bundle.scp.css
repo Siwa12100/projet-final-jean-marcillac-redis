@@ -104,6 +104,19 @@ nav[b-bm6uieix6k] {
     
     color : white;
     margin: 3.5vw;
+    font-size: 1.2vw;
+    transition: color 0.3s ease, border-color 0.3s ease; 
+    outline: none;
+    border: none;
+}
+
+.boutons button:hover[b-bm6uieix6k] {
+
+    color: rgb(157, 157, 255); /* Changement de la couleur du texte au survol */
+    border: 2px solid rgb(157, 157, 255);
+    cursor: pointer;
+    outline: none;
+    border: none;
 }
 /* _content/projet-jean-marcillac/Composants/Professeurs/ProfesseursDataGrid/ProfesseursDataGrid.razor.rz.scp.css */
 .contenu[b-2w3l73kyjj] {
@@ -181,6 +194,21 @@ h1[b-gt7pd18di2] {
 
 h1[b-1hjklefgfg] {
     margin-bottom: 5vw;
+    font-size: 3vw;
+}
+
+h2[b-1hjklefgfg] {
+
+    font-size: 2vw;
+}
+
+.boutons-data[b-1hjklefgfg] {
+
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .tableaux[b-1hjklefgfg] {
@@ -192,6 +220,7 @@ h1[b-1hjklefgfg] {
 
     /* border : 3px solid green; */
     width: 90%;
+    margin-bottom: 5vw;
 }
 
 .tableauProfs[b-1hjklefgfg], .tableauEleves[b-1hjklefgfg] {
@@ -230,7 +259,47 @@ h1[b-1hjklefgfg] {
 
 h1[b-oc1k9a4gju] {
     font-size: 3vw;
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
+}
+
+h2[b-oc1k9a4gju] {
+
+    font-size: 2vw;
+    margin-bottom: 1.7vw;
+}
+
+.coursAbonne[b-oc1k9a4gju] {
+
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: rgb(208, 156, 246);
+    margin-bottom: 1vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6vw;
+
+    height: 8vw;
+}
+
+.infos h3[b-oc1k9a4gju] {
+
+    font-size: 1.9vw;
+}
+
+.infos p[b-oc1k9a4gju] {
+
+    font-size: 1.4vw;
+}
+
+.boutons[b-oc1k9a4gju] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 86%;
 }
 /* _content/projet-jean-marcillac/Pages/PanelProf/PanelProf.razor.rz.scp.css */
 h1[b-4ezb0572rm] {

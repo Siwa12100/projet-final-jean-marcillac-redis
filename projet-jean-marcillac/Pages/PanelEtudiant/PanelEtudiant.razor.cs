@@ -41,18 +41,18 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             var tousLesCours = await this.CoursService.RecupererTousLesCours();
             this.CoursNonAbonnes = tousLesCours.ToList();   
 
-            this.OnConnexion(new Eleve(4, "Jean", "Marcillac", new List<int> { 1, 2 }));
+            // this.OnConnexion(new Eleve(4, "Jean", "Marcillac", new List<int> { 1, 2 }));
         }
 
 
-        protected void OnConnexion(Membre membre)
+        protected async Task OnConnexion(Membre membre)
         {
             MembreConnecte = (Eleve)membre;
-            this.FilterCours();
+            await this.FilterCours();
             StateHasChanged();
         }
 
-        protected void FilterCours()
+        protected async Task FilterCours()
         {
             if (MembreConnecte == null)
             {
@@ -60,6 +60,11 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             }
 
             if (this.CoursAbonnes == null || this.CoursNonAbonnes == null)
+            {
+                return;
+            }
+
+            if (this.MembreService == null)
             {
                 return;
             }
@@ -81,6 +86,14 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
                 this.CoursAbonnes.Add(cours);
                 this.CoursNonAbonnes.Remove(cours);
             });
+
+            this.CoursAbonnes = this.CoursAbonnes.Distinct().ToList();
+            this.CoursNonAbonnes = this.CoursNonAbonnes.Distinct().ToList();
+
+            this.MembreConnecte.IdsCoursInscrits = this.MembreConnecte.IdsCoursInscrits.Distinct().ToList();
+            await this.MembreService.ModifierEleve(this.MembreConnecte.Id, this.MembreConnecte);
+            this.MembreConnecte = await this.MembreService.RecupererEleve(this.MembreConnecte.Id);
+            StateHasChanged();
         }
 
         protected async void OnAbonnementEtudiant(int idCours)
@@ -106,7 +119,7 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             this.MembreConnecte.IdsCoursInscrits.Add(idCours);
             await this.MembreService.ModifierEleve(this.MembreConnecte.Id, this.MembreConnecte);
             this.MembreConnecte = await this.MembreService.RecupererEleve(this.MembreConnecte.Id);
-            this.FilterCours();
+            await this.FilterCours();
             StateHasChanged();
         }
 
@@ -127,8 +140,18 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             this.MembreConnecte.IdsCoursInscrits.Remove(cours.Id);
             await this.MembreService.ModifierEleve(this.MembreConnecte.Id, this.MembreConnecte);
             this.MembreConnecte = await this.MembreService.RecupererEleve(this.MembreConnecte.Id);
-            this.FilterCours();
+            await this.FilterCours();
             StateHasChanged();
+        }
+
+        protected void DirigerVersCours(Modeles.Cours cours)
+        {
+            if (this.NavigationManager == null)
+            {
+                return;
+            }
+
+            this.NavigationManager.NavigateTo($"/cours/{cours.Id}");
         }
     }
 }

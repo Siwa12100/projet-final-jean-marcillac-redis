@@ -22,5 +22,45 @@
 
 h1[b-oc1k9a4gju] {
     font-size: 3vw;
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
+}
+
+h2[b-oc1k9a4gju] {
+
+    font-size: 2vw;
+    margin-bottom: 1.7vw;
+}
+
+.coursAbonne[b-oc1k9a4gju] {
+
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: rgb(208, 156, 246);
+    margin-bottom: 1vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6vw;
+
+    height: 8vw;
+}
+
+.infos h3[b-oc1k9a4gju] {
+
+    font-size: 1.9vw;
+}
+
+.infos p[b-oc1k9a4gju] {
+
+    font-size: 1.4vw;
+}
+
+.boutons[b-oc1k9a4gju] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 86%;
 }

@@ -11,6 +11,21 @@
 
 h1[b-1hjklefgfg] {
     margin-bottom: 5vw;
+    font-size: 3vw;
+}
+
+h2[b-1hjklefgfg] {
+
+    font-size: 2vw;
+}
+
+.boutons-data[b-1hjklefgfg] {
+
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .tableaux[b-1hjklefgfg] {
@@ -22,6 +37,7 @@ h1[b-1hjklefgfg] {
 
     /* border : 3px solid green; */
     width: 90%;
+    margin-bottom: 5vw;
 }
 
 .tableauProfs[b-1hjklefgfg], .tableauEleves[b-1hjklefgfg] {
