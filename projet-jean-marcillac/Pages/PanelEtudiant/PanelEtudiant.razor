@@ -18,6 +18,16 @@
     {
         <h1>Panel Etudiant : @this.MembreConnecte.Nom @this.MembreConnecte.Prenom</h1>
 
+        @if (this.Notifs != null)
+        {
+            @foreach (var notif in this.Notifs)
+            {
+                <div class="notif">
+                    <p>@notif</p>
+                </div>
+            }
+        }
+
         <div class="cours">
             <div class="coursAbonnes">
                 <h2>Cours auquels vous êtes abonnés : </h2>
@@ -48,7 +58,6 @@
                     }
                 }
                 
-
             </div>
             
             <div class="coursNonAbonnes">

@@ -6,6 +6,7 @@ public class RedisService : IDisposable
 {
     private readonly ConnectionMultiplexer _redis;
     public IDatabase Database { get; }
+    public StackExchange.Redis.ISubscriber Suscriber { get; }
     public IServer Server { get; }
     public JsonCommands JsonCommands { get; }
 
@@ -21,6 +22,8 @@ public class RedisService : IDisposable
         this.Database = _redis.GetDatabase();
         this.JsonCommands = Database.JSON();
         this.Server = this._redis.GetServer(_redis.GetEndPoints()[0]);
+
+        this.Suscriber = this._redis.GetSubscriber();
     }
 
     public void Dispose()

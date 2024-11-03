@@ -16,10 +16,14 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
         [Inject]
         protected ICoursService? CoursService { get; set; }
 
+        [Inject]
+        protected RedisService? RedisService { get; set; }
+
         protected List<Modeles.Cours>? CoursAbonnes { get; set; }
         protected List<Modeles.Cours>? CoursNonAbonnes { get; set; }
         protected Eleve? MembreConnecte { get; set; }
         protected List<Membre>? TousLesEtudiants { get; set; }
+        protected List<string>? Notifs { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -33,6 +37,11 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
                 throw new InvalidOperationException("CoursService est null");
             }
 
+            if (this.RedisService == null)
+            {
+                throw new InvalidOperationException("RedisService est null");
+            }
+
             this.TousLesEtudiants = new List<Membre>();
             var tousLesEtudiants = await this.MembreService.RecupererTousLesEleves();
             tousLesEtudiants.ToList().ForEach(etudiant => this.TousLesEtudiants.Add(etudiant));
@@ -41,7 +50,24 @@ namespace projet_jean_marcillac.Pages.PanelEtudiant
             var tousLesCours = await this.CoursService.RecupererTousLesCours();
             this.CoursNonAbonnes = tousLesCours.ToList();   
 
-            // this.OnConnexion(new Eleve(4, "Jean", "Marcillac", new List<int> { 1, 2 }));
+            this.Notifs = new List<string>();
+
+            await this.RedisService.Suscriber.SubscribeAsync("cours-projet-final", async (channel, message) =>
+            {
+                if (message.ToString().Contains("ajout"))
+                {
+                    var idCours = int.Parse(message.ToString().Split(",")[1]);
+                    this.Notifs.Add($"Un nouveau cours a été ajouté: {idCours}");
+                    await InvokeAsync(StateHasChanged);
+                }
+
+                if (message.ToString().Contains("modif"))
+                {
+                    var idCours = int.Parse(message.ToString().Split(",")[1]);
+                    this.Notifs.Add($"Un cours a été modifié: {idCours}");
+                    await InvokeAsync(StateHasChanged);
+                }
+            });
         }
 
 

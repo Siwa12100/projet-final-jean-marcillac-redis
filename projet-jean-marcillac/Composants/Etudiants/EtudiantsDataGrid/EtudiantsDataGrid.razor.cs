@@ -18,6 +18,9 @@ namespace projet_jean_marcillac.Composants.Etudiants.EtudiantsDataGrid
         [Parameter]
         public List<Eleve>? Etudiants { get; set; }
 
+        [Parameter]
+        public EventCallback OnEtudiantModifie { get; set; }
+
         [Inject]
         protected IMembreService? MembreService { get; set; }
 
@@ -55,6 +58,12 @@ namespace projet_jean_marcillac.Composants.Etudiants.EtudiantsDataGrid
             }
         }
 
+        protected override async Task OnParametersSetAsync()
+        {
+            StateHasChanged();
+            await base.OnParametersSetAsync();
+        }
+
         private async Task SupprimerEtudiant(Eleve etudiant)
         {
             if (MembreService == null) return;
@@ -83,8 +92,5 @@ namespace projet_jean_marcillac.Composants.Etudiants.EtudiantsDataGrid
                 await OnEtudiantModifie.InvokeAsync();
             }
         }
-
-        [Parameter]
-        public EventCallback OnEtudiantModifie { get; set; }
     }
 }

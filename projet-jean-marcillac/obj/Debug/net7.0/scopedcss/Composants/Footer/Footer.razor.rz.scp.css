@@ -12,9 +12,17 @@
 
 }
 
+h2[b-t47pkccyiw] {
+    color : white;
+    font-weight: 400;
+}
+
 .contenu[b-t47pkccyiw] {
 
-    border : 1px solid red;
     height: 90%;
     width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
